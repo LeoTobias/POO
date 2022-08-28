@@ -42,7 +42,7 @@ quantidade de litros (LITROS_USADOS) utilizada na viagem.
 </head>
 <body>
     <form name="form2" action="L01D.php" method="post">
-        <h1></h1>
+        <h1>Média de uma viagem</h1>
         <input type="hidden" name="oper">
         <input type="number" placeholder="Digite o tempo gasto na viagem" name="tempo" value = <?php echo $tempo; ?> ><br>
         <input type="number" placeholder="Digite à velocidade" name="velocidade" value = <?php echo $velocidade; ?> ><br>

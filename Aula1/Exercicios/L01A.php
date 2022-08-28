@@ -31,7 +31,7 @@ conversão é F ← (9 * C + 160) / 5, sendo F a temperatura em Fahrenheit e C a
         <h1>Convertendo Graus Celsius</h1>
         <input type="hidden" name="oper">
         <input type="number" placeholder="Digite a temperatura" name="celsius" value = <?php echo $c; ?> ><br>
-        <label for="vlmdia">Conversão: <?php echo "{$f}"; ?></label><br>
+        <label for="vlmdia">Conversão: <?php echo "{$f}° Fahrenheit"; ?></label><br>
         <input type="submit" value="Converter" \>
         <input type="button" value="Novo Calculo" onclick = "form2.oper.value='limpar'; submit();" \>
     </form>
