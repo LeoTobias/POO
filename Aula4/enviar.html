@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de E-mail usando PHP - Mailer</title>
+</head>
+<body style="background-color:rgb(110, 180, 110);">
+    <form action = enviar.php name = form1 method=post enctype="multipart-form/data">
+        <table align = center>
+            <tr>
+                <td colspan =2 align = center> <h2>Envio de Formulário usando PHPMailer </h2></td>
+            </tr>
+            <tr>
+            <td align=right><label> Para:</label></td>
+            <td><input type="text" name="destinatario" size = 50></td>
+            </tr>
+            <tr>
+            <td align=right><label> Assunto:</label></td>
+            <td><input type="text" name="assunto" size = 50></td>
+            </tr>
+            <tr>
+            <td style = "vertical-align: top; text-align: right"><label> Conteúdo:</label></td>
+            <td><textarea name = conteudo cols = 50 rows="5"></textarea></td>
+            </tr>
+            <tr>
+            <td colspan = 2 align=right><input type="submit" name="Enviar" value = 'Enviar' ></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
