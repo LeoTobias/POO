@@ -1,6 +1,6 @@
 <?php
 
-require_once "classes/Registro.class.php";
+require_once "../classes/Registro.class.php";
 
 $registro = new Registro();
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once("DatabaseConnection.class.php");
+require_once("dbConnection.class.php");
 require_once("src/PHPMailer.php");
 require_once("src/SMTP.php");
 require_once("src/Exception.php");
@@ -18,13 +18,6 @@ class Registro extends DatabaseConnection{
     private $codAcesso;
     private $tipo;
 
-
-    /**
-     * Define os atributos basicos de registro
-     * @param string $login  Username
-     * @param string $email  Email
-     * @param int $telefone  telefone
-     */
     public function setUsuario($login, $email, $telefone)
     {
         $this->login    = $login;
@@ -33,9 +26,6 @@ class Registro extends DatabaseConnection{
     }
 
 
-    /**
-     * Registrar o usuario no banco e mandar o email.
-     */
     public function setRegistrar()
     {
         $mail = new PHPMailer(true);
