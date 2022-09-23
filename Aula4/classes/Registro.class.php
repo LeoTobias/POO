@@ -44,14 +44,21 @@ class Registro extends DatabaseConnection{
         $stmt->bindParam(':codAcesso', $this->codAcesso);
 
         if($stmt->execute()){
-            $mail->isSMTP();
-            $mail->SMTPAuth   = true;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            //$mail -> SMTPDebug = SMTP::DEBUG_SERVER;        
+            $mail -> SMTPOptions = array( //para funcionar o envio e corrigir o erro de servidor não encontrado
+                'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            ));
 
-            $mail->Host       = 'smtp.hostinger.com';
-            $mail->Username   = 'temporario@topsecuritty.com';
-            $mail->Password   = '@#Els2556';
-            $mail->Port       = 465;
+            $mail -> isSMTP();
+            $mail -> Host = 'smtp.gmail.com';
+            $mail -> SMTPAuth = true;
+            $mail -> Username = 'rtestconta@gmail.com';
+            $mail -> Password = 'rdqeiflpwpwswgcm';
+            $mail -> SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail -> Port = 465;
 
             $mail->setFrom ('temporario@topsecuritty.com');
             $mail->addAddress($this->email, $this->login);
