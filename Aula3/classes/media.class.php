@@ -15,7 +15,7 @@
         }
 
         public function getMediaAri() {
-            $medi =($this->nota1 + $this->nota2+ $this->nota3 + $this->nota4)/4;
+            $medi = ($this->nota1 + $this->nota2+ $this->nota3 + $this->nota4)/4;
             return $medi; 
         }
 

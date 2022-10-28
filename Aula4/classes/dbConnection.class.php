@@ -1,52 +1,23 @@
 <?php
 
 class DatabaseConnection{
-    /**
-     * Gerenciador de Banco de Dados.
-     * @var string
-     */
+
     public $DB_DRIVE;
-
-    /**
-     * Host do Banco de Dados
-     * @var string
-     */
     public $DB_HOST;
-
-    /**
-     * Nome do Banco de Dados
-     * @var string
-     */
     public $DB_NAME;
-
-    /**
-     * Usuario para acessar o Banco
-     * @var string
-     */
     public $DB_USER;
-
-    /**
-     * Senha do Bnaco de Dados
-     * @var string
-     */
     public $DB_PASS;
 
 
-    /**
-     * Define as variaveis de conexão.
-     */
     public function __construct()
     {
         $this->setDBDRIVE('mysql');
-        $this->setDBHOST('localhost');
+        $this->setDBHOST('127.0.0.1');
         $this->setDBNAME('protocolo');
         $this->setDBUSER('root');
         $this->setDBPASS('');
     }
 
-    /**
-     * Realiza a conexão com o Banco de Dados.
-     */
     public function setConnection(){
         $dns = "mysql:host={$this->DB_HOST};dbname={$this->DB_NAME}";
         $user = $this->DB_USER;
@@ -61,11 +32,7 @@ class DatabaseConnection{
         }
     }
 
-    /**
-     * Define o valor de DB DRIVE
-     * @param mixed $DB_DRIVE
-     * @return self
-     */
+
     public function setDBDRIVE($DB_DRIVE)
     {
         $this->DB_DRIVE = $DB_DRIVE;
@@ -73,20 +40,11 @@ class DatabaseConnection{
         return $this;
     }
 
-    /**
-     * Pega o valor de DB DRIVE
-     * @return mixed
-     */
     public function getDBDRIVE()
     {
         return $this->DB_DRIVE;
     }
 
-    /**
-     * Define o valor de DB HOST
-     * @param mixed $DB_HOST
-     * @return self
-     */
     public function setDBHOST($DB_HOST)
     {
         $this->DB_HOST = $DB_HOST;
@@ -94,20 +52,13 @@ class DatabaseConnection{
         return $this;
     }
 
-    /**
-     * Pega o valor de DB HOST
-     * @return mixed
-     */
+
     public function getDBHOST()
     {
         return $this->DB_HOST;
     }
 
-    /**
-     * Define o valor de DB NAME
-     * @param mixed $DB_NAME
-     * @return self
-     */
+
     public function setDBNAME($DB_NAME)
     {
         $this->DB_NAME = $DB_NAME;
@@ -115,20 +66,13 @@ class DatabaseConnection{
         return $this;
     }
 
-    /**
-     * Pega o valor de DB NAME
-     * @return mixed
-     */
+
     public function getDBNAME()
     {
         return $this->DB_NAME;
     }
 
-    /**
-     * Define o valor de DB USER
-     * @param mixed $DB_USER
-     * @return self
-     */
+
     public function setDBUSER($DB_USER)
     {
         $this->DB_USER = $DB_USER;
@@ -136,20 +80,13 @@ class DatabaseConnection{
         return $this;
     }
 
-    /**
-     * Pega o valor de DB USER
-     * @return mixed
-     */
+
     public function getDBUSER()
     {
         return $this->DB_USER;
     }
 
-    /**
-     * Define o valor de DB PASS
-     * @param mixed $DB_PASS
-     * @return self
-     */
+
     public function setDBPASS($DB_PASS)
     {
         $this->DB_PASS = $DB_PASS;
@@ -157,10 +94,7 @@ class DatabaseConnection{
         return $this;
     }
 
-    /**
-     * Pega o valor de DB PASS
-     * @return mixed
-     */
+
     public function getDBPASS()
     {
         return $this->DB_PASS;
