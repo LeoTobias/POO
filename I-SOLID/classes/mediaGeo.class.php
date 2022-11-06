@@ -1,14 +1,35 @@
-<?php 
-require_once('media.class.php');
+<?php
 
-interface mediaGeometrica extends Media{
+require_once("Imedia.int.php");
+require_once("ImediaGeo.int.php");
 
-    public function getMediaGeo();
-    
-}
+class MediaGeometrica implements ImediaGeo {
+    public $notas;
+    public $nome;
 
-class mediaGeo {
-    public function getMediaGeo():float {
-        return sqrt($this->nota1 * $this->nota2);
-    } 
+    public function setDados(array $notas, $nome)
+    {
+        $i = 0;
+        foreach( $notas as $nota) {
+            $this->notas[$i] = $nota;
+            $i++;
+        }
+    }
+
+    public function mostrarMedia($obj)
+    {
+        echo "Nota Geométrica: " . $this->getMediaGeo() . "<br>";
+    }
+
+    public function getMediaGeo()
+    {
+        $media = 1;
+        $i = 0;
+
+        foreach($this->notas as $nota){
+            $media = $media * $nota;
+            $i++;
+        }
+        return pow($media, $i);
+    }
 }

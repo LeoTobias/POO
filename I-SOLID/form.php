@@ -7,9 +7,11 @@ if( isset($_POST['mediaGeo']) ){
     $nome  = $_POST["nome"];
     $nota1 = $_POST["nota1"];
     $nota2 = $_POST["nota2"];
-    
-    $notaGeo = new mediaGeometrica($nota1, $nota2, $nome);
-    $mediaGeo = $notaGeo->getMediaGeo();
+    $notas = array ($nota1, $nota2);
+
+    $mediaGeo = new MediaGeometrica;
+    $mediaGeo->setDados($notas, $nome);
+    $mediaGeo->mostrarMedia($mediaGeo);
 
 }
 
@@ -17,9 +19,13 @@ if(isset($_POST['mediaAri'])){
     $nome  = $_POST["nome"];
     $nota1 = $_POST["nota1"];
     $nota2 = $_POST["nota2"];
+    $notas = array ($nota1, $nota2);
 
-    $notaArit = new MediaAritmetica($nota1, $nota2, $nome);
-    $mediaArit = $notaArit->getMediaAri();
+    $mediaArit = new mediaAri;
+    $mediaArit->setDados($notas, $nome);
+    $mediaArit->mostrarMedia($mediaArit);
+
+
 }
 
 ?>
